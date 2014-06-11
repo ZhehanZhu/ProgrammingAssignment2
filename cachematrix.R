@@ -1,4 +1,9 @@
-## The following function sets and gets the value of the matrix.
+## Cache the inverse of a matrix so that
+## it does not have to be computed every time
+
+## Sets and gets the value of the input matrix
+## Creat extra space for the inverse of the input matrix
+
 makeCacheMatrix <- function(x = matrix()){
 	i <- NULL
 	set <- function(y){
@@ -13,7 +18,8 @@ makeCacheMatrix <- function(x = matrix()){
 		getinv = getinv) 
 }
 
-## The following function calculats the inverse of the special "Mmatrix" created with the above function. However, it first checks to see if the inverse has already been calculated. If so, it gets the inverse from the cache and skips the computation. Otherwise, it calculates the inverse of the data and sets the value of the inverse in the cache via the setinv function.
+## Read the inverse of the input matrix if cached
+## Calculate the inverse of the input matrix if not cached
 
 cacheSolve <- function(x, ...){
 	i <- x$getinv()
